@@ -23,8 +23,8 @@ import { SelectSearchable } from './select-searchable.component';
                 <div class="select-searchable-spinner-background"></div>
                 <ion-spinner></ion-spinner>
             </div>
-            <ion-list no-margin *ngIf="filteredItems.length">
-                <button ion-item detail-none *ngFor="let item of filteredItems" (click)="select(item)">
+        <ion-list no-margin *ngIf="filteredItems.length" [virtualScroll]="filteredItems">
+                <button ion-item detail-none  *virtualItem ="let item" (click)="select(item)">
                     <ion-icon
                         [name]="isItemSelected(item) ? 'checkmark-circle' : 'radio-button-off'"
                         [color]="isItemSelected(item) ? 'primary' : 'daek'"
